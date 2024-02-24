@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '/data/storage/rental_storage.dart';
+import '/data/storage/driver_booking_storage.dart';
 import '/res/colors.dart';
 import 'app_theme.dart';
 
 class ThemeService {
   static const LIGHT_THEME = 0;
   static const DARK_THEME = 1;
-  final store = Get.find<RentalStorage>();
+  final store = Get.find<DriverBookingStorage>();
   ThemeData? _themeData;
 
   ThemeData? get themeData {
@@ -140,19 +140,25 @@ extension MyColorScheme on ColorScheme {
 
   Color get themeColor00CCDD => getColorTheme(color00CCDD, color00CCDD);
 
-  Color get themeColorPrimaryOpacity10 => getColorTheme(colorPrimary.withOpacity(0.1), colorPrimary.withOpacity(0.1));
+  Color get themeColorPrimaryOpacity10 => getColorTheme(
+      colorPrimary.withOpacity(0.1), colorPrimary.withOpacity(0.1));
 
-  Color get themeColorPrimaryOpacity30 => getColorTheme(colorPrimary.withOpacity(0.3), colorPrimary.withOpacity(0.3));
+  Color get themeColorPrimaryOpacity30 => getColorTheme(
+      colorPrimary.withOpacity(0.3), colorPrimary.withOpacity(0.3));
 
-  Color get themeColor00AC44Opacity10 => getColorTheme(color00AC44.withOpacity(0.1), color00AC44.withOpacity(0.1));
+  Color get themeColor00AC44Opacity10 =>
+      getColorTheme(color00AC44.withOpacity(0.1), color00AC44.withOpacity(0.1));
 
-  Color get themeColor00AC44Opacity30 => getColorTheme(color00AC44.withOpacity(0.3), color00AC44.withOpacity(0.3));
+  Color get themeColor00AC44Opacity30 =>
+      getColorTheme(color00AC44.withOpacity(0.3), color00AC44.withOpacity(0.3));
 
   Color get themeColorFF6F15 => getColorTheme(colorFF6F15, colorFF6F15);
 
-  Color get themeColorFF6F15Opacity10 => getColorTheme(colorFF6F15.withOpacity(0.1), colorFF6F15.withOpacity(0.1));
+  Color get themeColorFF6F15Opacity10 =>
+      getColorTheme(colorFF6F15.withOpacity(0.1), colorFF6F15.withOpacity(0.1));
 
-  Color get themeColorFF6F15Opacity30 => getColorTheme(colorFF6F15.withOpacity(0.3), colorFF6F15.withOpacity(0.3));
+  Color get themeColorFF6F15Opacity30 =>
+      getColorTheme(colorFF6F15.withOpacity(0.3), colorFF6F15.withOpacity(0.3));
 
 //***************************BACKGROUND COLOR*****************************************
   //Màu của các background

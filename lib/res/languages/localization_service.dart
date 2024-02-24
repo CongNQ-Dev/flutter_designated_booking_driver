@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:get/get.dart';
 
-import '/data/storage/rental_storage.dart';
+import '/data/storage/Driver_Booking_storage.dart';
 import 'st_en_us.dart';
 import 'st_vi_vn.dart';
 
@@ -10,7 +10,7 @@ class LocalizationService extends Translations {
   @override
   Map<String, Map<String, String>> get keys => {"vi": viVN, "en": enUS};
 
-  final store = Get.find<RentalStorage>();
+  final store = Get.find<DriverBookingStorage>();
   static const VI_VN = "vi";
   static const EN_US = "en";
 

@@ -37,10 +37,12 @@ class RestClient {
   }
 
   static Dio getDio({String? customUrl, bool isUpload = false}) {
-    var dio = Dio(instance.getDioBaseOption(customUrl: customUrl, isUpload: isUpload));
+    var dio = Dio(
+        instance.getDioBaseOption(customUrl: customUrl, isUpload: isUpload));
 
     if (ENABLE_LOG) {
-      dio.interceptors.add(LogInterceptor(requestBody: true, responseBody: true, logPrint: logPrint));
+      dio.interceptors.add(LogInterceptor(
+          requestBody: true, responseBody: true, logPrint: logPrint));
     }
     // //check expire time
     dio.interceptors.add(InterceptorsWrapper(
