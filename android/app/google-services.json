@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "980828865246",
+    "firebase_url": "https://flutter-prep-47c99-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "flutter-prep-47c99",
+    "storage_bucket": "flutter-prep-47c99.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:980828865246:android:8a184d99cb381c06dab84f",
+        "android_client_info": {
+          "package_name": "com.example.secure_ride_home"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAeO3ltLHsJEEBd5bYUvkz14CiJNXykNm8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
