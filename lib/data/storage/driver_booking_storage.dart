@@ -11,7 +11,7 @@ class DriverBookingStorage {
   static const STORAGE_NAME = "driver_booking_storage";
   static const USER_ACCESS_TOKEN = "user_access_token";
   static const USER_ROLE = "user_role";
-  static const DRIVER_BOOKING_USER_INFO = "driver_booking_user_info";
+  static const BOOKING_USER_INFO = "booking_user_info";
   static const APP_NEW_INSTALL = "app_new_install";
   static const APP_THEME = "app_theme";
   static const APP_LANGUAGE = "app_language";
@@ -41,11 +41,11 @@ class DriverBookingStorage {
 
   Future<void> saveUserInfo(TUser user) async {
     String json = jsonEncode(user.toJson());
-    box.write(DRIVER_BOOKING_USER_INFO, json);
+    box.write(BOOKING_USER_INFO, json);
   }
 
   Future<TUser?> getUserInfo() async {
-    final userJson = await box.read(DRIVER_BOOKING_USER_INFO);
+    final userJson = await box.read(BOOKING_USER_INFO);
     return userJson != null ? TUser.fromJson(json.decode(userJson)) : null;
   }
 
@@ -79,8 +79,7 @@ class DriverBookingStorage {
   Future<void> logout() async {
     if (box.hasData(APP_LANGUAGE)) await box.remove(APP_LANGUAGE);
     if (box.hasData(APP_THEME)) await box.remove(APP_THEME);
-    if (box.hasData(DRIVER_BOOKING_USER_INFO))
-      await box.remove(DRIVER_BOOKING_USER_INFO);
+    if (box.hasData(BOOKING_USER_INFO)) await box.remove(BOOKING_USER_INFO);
     if (box.hasData(USER_ROLE)) await box.remove(USER_ROLE);
     if (box.hasData(USER_ACCESS_TOKEN)) await box.remove(USER_ACCESS_TOKEN);
   }
