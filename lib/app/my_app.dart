@@ -1,21 +1,22 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+
 import 'package:get/get.dart';
 
 import '../res/languages/localization_service.dart';
 import 'app_controller.dart';
 import 'app_pages.dart';
 
-class RentalApp extends GetWidget<AppController> {
-  const RentalApp({super.key});
+class DriverBookingApp extends GetWidget<AppController> {
+  const DriverBookingApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       child: Obx(() => GetMaterialApp(
             debugShowCheckedModeBanner: false,
-            title: "Rental",
+            title: "DriverBooking",
             translations: LocalizationService(),
             locale: controller.locale?.value,
             theme: controller.themeData?.value,

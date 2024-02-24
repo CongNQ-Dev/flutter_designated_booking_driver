@@ -2,10 +2,11 @@ import 'package:event_bus/event_bus.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:secure_ride_home/data/storage/driver_booking_storage.dart';
 
 import '/data/api/api_constants.dart';
 import '/data/api/rest_client.dart';
-import '/data/storage/rental_storage.dart';
+
 import '/res/languages/localization_service.dart';
 import '/res/theme/app_theme.dart';
 import '/res/theme/theme_service.dart';
@@ -31,7 +32,7 @@ class AppController extends GetxController {
   }
 
   Future<void> initAuth() async {
-    final storage = Get.find<RentalStorage>();
+    final storage = Get.find<DriverBookingStorage>();
     user = await storage.getUserInfo();
     final token = await storage.getUserAccessToken();
 
@@ -53,14 +54,14 @@ class AppController extends GetxController {
   }
 
   Future<void> initStorage() async {
-    await Get.put(RentalStorage()).init();
+    await Get.put(DriverBookingStorage()).init();
   }
 
   logout() async {
     user = null;
     locale = null;
     themeData = null;
-    await Get.find<RentalStorage>().logout();
+    await Get.find<DriverBookingStorage>().logout();
     Get.offAllNamed(AppRoutes.INITIAL);
   }
 
@@ -69,7 +70,7 @@ class AppController extends GetxController {
     final themeService = Get.find<ThemeService>();
     themeData = themeService.themeData.obs;
     //Lang nghe su thay doi theme khi luu vao storage
-    themeService.store.box.listenKey(RentalStorage.APP_THEME, (value) {
+    themeService.store.box.listenKey(DriverBookingStorage.APP_THEME, (value) {
       if (value != null) if (themeData != null) {
         themeData!.value = appThemeData[themeService.getAppTheme(value)];
       } else {
@@ -83,7 +84,8 @@ class AppController extends GetxController {
     final localeService = Get.find<LocalizationService>();
     locale = localeService.getLocale.obs;
     //Lang nghe su thay doi theme khi luu vao storage
-    localeService.store.box.listenKey(RentalStorage.APP_LANGUAGE, (value) {
+    localeService.store.box.listenKey(DriverBookingStorage.APP_LANGUAGE,
+        (value) {
       if (value != null) locale!.value = Locale(value);
     });
   }

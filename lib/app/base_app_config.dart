@@ -1,13 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-
-import '/data/api/respositories/common_repository.dart';
-import '/data/api/respositories/home_repository.dart';
-import '/data/api/respositories/user_repository.dart';
-import '/data/api/services/common_service.dart';
-import '/data/api/services/home_service.dart';
-import '/data/api/services/user_service.dart';
+import 'package:secure_ride_home/data/api/service/user_service.dart';
 
 enum Environment { dev, prod, staging }
 

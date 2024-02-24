@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:rental/ui/widgets/button/touchable_opacity.dart';
-import 'package:rental/ui/widgets/icon/icons_component.dart';
+import 'package:secure_ride_home/ui/widgets/button/touchable_opacity.dart';
+import 'package:secure_ride_home/ui/widgets/icon/icons_component.dart';
+
 import 'package:url_launcher/url_launcher.dart';
 
 import '/res/style.dart';
@@ -13,7 +14,8 @@ class UserRoleWidget extends StatelessWidget {
   final double? avatarSize;
   final String createDate;
 
-  const UserRoleWidget({required this.user, this.avatarSize = 56, required this.createDate});
+  const UserRoleWidget(
+      {required this.user, this.avatarSize = 56, required this.createDate});
 
   @override
   Widget build(BuildContext context) {
@@ -61,12 +63,15 @@ class UserRoleWidget extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             TouchableOpacity(
-              child: buildRowImageTextIcon(Assets.icons.icPhone.svg(), "Call", textStyle: text12.textColor141414),
+              child: buildRowImageTextIcon(Assets.icons.icPhone.svg(), "Call",
+                  textStyle: text12.textColor141414),
               onPressed: () => _makePhoneCall("+84969735764"),
             ),
             SizedBox(width: 12.ws),
             TouchableOpacity(
-              child: buildRowImageTextIcon(Assets.icons.icMessage.svg(), "Inbox", textStyle: text12.textColor141414),
+              child: buildRowImageTextIcon(
+                  Assets.icons.icMessage.svg(), "Inbox",
+                  textStyle: text12.textColor141414),
               onPressed: () => _makeMessage("0969735764"),
             ),
           ],
